@@ -1,17 +1,6 @@
 import unittest
 from unittest.mock import patch
-
-def fibonacci(posicao):
-    anterior = 0
-    proximo = 0
-
-    for _ in range(0, posicao):
-        proximo = proximo + anterior
-        anterior = proximo - anterior
-        if(proximo == 0):
-            proximo = proximo + 1
-    
-    return proximo
+from fib import fibonacci
 
 class FibonacciTests(unittest.TestCase):
 
