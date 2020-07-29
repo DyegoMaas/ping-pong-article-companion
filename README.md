@@ -32,7 +32,7 @@ if __name__ == '__main__':
 
 Sabendo que a regra dita que o primeiro valor retornado pela sequência é zero, o piloto escreveu um simples teste, que chama a futura função `fibonacci`, passando a `pos` 0, esperando que o valor retornado seja 0. Chegando ao fim da etapa `RED` do ciclo do TDD, ele passa a bola.
 
-![Primeiro teste falhando](/img/exemplo-primeiro-teste-falhando.png")
+![](/img/exemplo-primeiro-teste-falhando.png)
 
 ### Ciclano assume (PONG)
 
@@ -45,7 +45,7 @@ def fibonacci(pos):
 
 Ele roda os testes, e está passando. Excelente.
 
-![Primeiro teste passando](/img/exemplo-primeiro-teste-passando.png")
+![](/img/exemplo-primeiro-teste-passando.png)
 
 E então chega a hora de refatorar (etapa `REFACTOR`). Ele olha para Fulano, e chega à conclusão de que ainda é cedo pra isso, e parte para escrever o segundo teste:
 
@@ -56,7 +56,7 @@ def test_o_segundo_valor_eh_um(self):
     self.assertEqual(valor, 1)
 ```
 
-![Segundo teste falhando](/img/exemplo-segundo-teste-falhando.png")
+![](/img/exemplo-segundo-teste-falhando.png)
 
 Ele roda o teste, e o mesmo falha (`RED`). É hora de passar a bola. O código ficou assim:
 
@@ -109,7 +109,7 @@ def test_o_proximo_valor_eh_a_soma_dos_dois_anteriores(self, retornos):
         self.assertEqual(valor, valor_esperado)
 ```
 
-![Terceiro teste falhando](/img/exemplo-terceiro-teste-falhando.png")
+![](/img/exemplo-terceiro-teste-falhando.png)
 
 ### Ciclano assume (PONG)
 
@@ -129,7 +129,7 @@ def fibonacci(pos):
     return proximo
 ```
 
-![Terceiro teste passando](/img/exemplo-terceiro-teste-passando.png")
+![](/img/exemplo-terceiro-teste-passando.png)
 
 Ele roda os testes e estão passando (`GREEN`). Ele decise refatorar levemente o código (`REFACTOR`), renomeando a variável `pos` para `posicao`. O código ficou assim:
 
@@ -170,7 +170,7 @@ def test_deve_retornar_zero_para_posicoes_negativas(self):
 
 Ao rodar este teste, ele passa, porque coincidentemente o `for` não é processado. Então não conta como `RED` e ainda não pode passar a bola para o amigo.
 
-![Quarto teste passando](/img/exemplo-quarto-teste-passando.png")
+![](/img/exemplo-quarto-teste-passando.png)
 
 Olhando para o artigo na Wikipedia, ele decide que talvez não caiba escrever novos testes. Adiciona mais alguns casos no teste `test_o_proximo_valor_eh_a_soma_dos_dois_anteriores` e decide desafiar o colega a refatorar a função para a versão recursiva. O colega topa. Eles continuam na etapa `REFACTOR`.
 
